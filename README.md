@@ -1,5 +1,9 @@
 # cppn-tensorflow
 
+## To do-rsnk
+* Add ReLU and leaky ReLu as activations
+* For colour, test on different colour spaces
+
 Simplified implementation of [Compositional Pattern Producing Network](https://en.wikipedia.org/wiki/Compositional_pattern-producing_network) in TensorFlow of the purpose of abstract art generation and for future deep learning work in generative algorithms.
 
 ![Bondage](https://cdn.rawgit.com/hardmaru/cppn-tensorflow/master/examples/tanh_anim_end.png)
