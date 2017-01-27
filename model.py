@@ -165,6 +165,18 @@ class CPPN():
     The final hidden later is pass thru a fully connected sigmoid later, so outputs -> (0, 1)
     Also, the output has a dimention of c_dim, so can be monotone or RGB
     '''
+
+    ###
+    ### Example: mixing tanh, softmax and ReLU
+    ###
+    '''
+    H = tf.nn.tanh(U)
+    H = tf.nn.relu(fully_connected(H, net_size, 'g_relu_1'))
+    H = tf.nn.tanh(fully_connected(H, net_size, 'g_tanh_2'))
+    H = tf.nn.softmax(fully_connected(H, net_size, 'g_softplus_1'))
+    output = 0.5 * tf.sin(fully_connected(H, self.c_dim, 'g_final')) + 0.5
+    '''
+
     result = tf.reshape(output, [self.batch_size, y_dim, x_dim, self.c_dim])
 
     return result
